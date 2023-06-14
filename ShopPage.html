@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <div>
+            <h1> Welcome to our store page!</h1>
+        </div>
+    </head>
+    <link rel="stylesheet" href="ShopPage.css">
+    <body>
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn" onclick="filterSelection('metal')"> Metal</button>
+            <button class="btn" onclick="filterSelection('rock')"> Rock</button>
+            <button class="btn" onclick="filterSelection('rap')"> Rap</button>
+        </div>
+        <div class="row">
+            <div class="column metal">
+              <div class="content">
+                <img src="TheDeathWeSeek1.jpg" alt="Mountains" style="width:100%">
+                <h4>The Death We Seek - Currents</h4>
+                <p>$24.99 TRANSPARENT RED W/ BLACK & SILVER SPLATTER - Limited to 500</p>
+              </div>
+            </div>
+            <div class="column metal">
+              <div class="content">
+                <img src="TDOPOM1.jpg" style="width:100%">
+                <h4>The Death Of Peace Of Mind - Bad Omens</h4>
+                <p>$34.99 TRANSPARENT ORANGE W/ YELLOW INSIDE 2LP - Limited to 1000</p>
+              </div>
+            </div>
+            <div class="column metal">
+              <div class="content">
+                <img src="TakeMeBackToEden1.jpg" style="width:100%">
+                <h4>Take Me Back To Eden - Sleep Token</h4>
+                <p>$34.99 GOLD 2LP </p>
+              </div>
+            </div>
+            <div class="column metal">
+              <div class="content">
+                <img src="ColorDecay1.jpg" style="width:100%">
+                <h4>Color Decay - The Devil Wears Prada</h4>
+                <p>$24.99 ELECTRIC BLUE W/ RED INSIDE LP</p>
+              </div>
+            </div>
+            <div class="column metal">
+              <div class="content">
+                <img src="TheWayOfTheFist1.jpg"style="width:100%">
+                <h4>The Way Of The Fist - Five Finger Death Punch</h4>
+                <p>$24.99 BLACK LP</p>
+              </div>
+            </div>
+            <div class="column metal">
+              <div class="content">
+                <img src="Metallica1.jpg" style="width:100%">
+                <h4>Metallica - Metallica</h4>
+                <p>$34.99 BLACK 2LP</p>
+              </div>
+            </div>
+        </div>
+            <div class="column rock">
+              <div class="content">
+                <img src="HeartWork1.jpg" style="width:100%">
+                <h4>HeartWork - The Used </h4>
+                <p>OUT OF STOCK!</p>
+              </div>
+            </div>
+            <div class="column rock">
+              <div class="content">
+                <img src="LFTL1.jpg" style="width:100%">
+                <h4>Lies For The Liars - The Used </h4>
+                <p>OUT OF STOCK!</p>
+              </div>
+            </div>
+            <div class="column rock">
+              <div class="content">
+                <img src="FBINS1.jpg" style="width:100%">
+                <h4>Finding Beauty In Negative Spaces - Seether</h4>
+                <p>$34.99 CLEAR W/ PURPLE SPLATTER 2LP - Limited to 350</p>
+              </div>
+            </div>
+            <div class="column rap">
+                <div class="content">
+                  <img src="BeautyInDeath1.jpg" style="width:100%">
+                  <h4>Beauty In Death - Chase Atlantic</h4>
+                  <p>$24.99 RED W/ WHITE SWIRL LP - Limited to 500</p>
+                </div>
+              </div>
+              <div class="column rap">
+                <div class="content">
+                  <img src="BottomOfTheBarrel1.jpg" style="width:100%">
+                  <h4>Bottom Of The Barrel - City Morgue</h4>
+                  <p>$24.99 MONSTER GREEN W/ RED SWIRL LP - Limited to 500</p>
+                </div>
+              </div>
+              <div class="column rap">
+                <div class="content">
+                  <img src="LTEOS1.jpg" style="width:100%">
+                  <h4>Long Term Effects Of Suffering - $uicideboy$</h4>
+                  <p>$24.99 CLEAR LP - Limited to 1,000</p>
+                </div>
+              </div>
+              <div class="column rap">
+                <div class="content">
+                  <img src="Pray4Shakewell1.jpg" style="width:100%">
+                  <h4>Pray 4 Shakewell - Shakewell</h4>
+                  <p>$24.99 CLEAR w/ BLACK SPLATTER</p>
+                </div>
+              </div> 
+              <div class="column rap">
+                <div class="content">
+                  <img src="CurtainCall1.jpg" style="width:100%">
+                  <h4>Cutrain Call 2 - Eminem</h4>
+                  <p>OUT OF STOCK!</p>
+                </div>
+              </div>
+    </body>
+</html>
+<script>
+    filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
