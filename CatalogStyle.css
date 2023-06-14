@@ -1,0 +1,42 @@
+body{
+    background-image: url(Black-And-Red-HD-Wallpapers.jpg);
+    background-position: center;
+}
+h1{
+    margin: auto;
+    width: 300px;
+    padding: 10px;
+    border: 10px solid red;
+    background-color: black;
+    text-align: center;
+    color: red 
+}
+h3{
+    margin: auto;
+    width: 500px;
+    padding: 10px;
+    border: 10px solid red;
+    background-color: black;
+    text-align: center;
+    color: red 
+}
+div.gallery{
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+    margin-right: auto;
+}
+div.gallery:hover{
+    border: 1px solid #777;
+}
+div.gallery img{
+    width: 100%;
+    height: auto;
+}
+div.desc{
+    width: 100%;
+    height: auto;
+    color: white;
+    background-color: black;
+}
